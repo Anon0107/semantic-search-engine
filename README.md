@@ -6,6 +6,14 @@ Building semantic search from scratch — embeddings, vector databases, and RAG 
 - **Day 1 (Apr 5):** Embeddings fundamentals — converting text to vectors with Voyage AI, cosine similarity implemented from scratch and with numpy
 - **Day 2 (Apr 6):** Vector database with ChromaDB Cloud — stored 200 HackerNews titles, queried by semantic similarity using Voyage AI embeddings, compared semantic vs keyword search
 - **Day 3 (Apr 7):** RAG pipeline from scratch — chunked and ingested `notes.txt`, queried ChromaDB for top-3 relevant chunks, injected into Claude prompt for answers
+- **Day 4 (Apr 8):** Advanced RAG — sentence-boundary chunking, section-aware splitting via `---` (custom) separators, query rewriting with Claude, source citation in responses
+
+## RAG Findings (Day 4)
+- **Sentence-boundary chunking preserves meaning at chunk edges** — chunks now always end at a full stop, eliminating mid-sentence splits
+- **Section separators prevent context bleed** — content from different topics no longer gets grouped into the same chunk
+- **Query rewriting improves retrieval accuracy** — Claude rephrases the user's query before embedding, reducing vocabulary mismatch between question and document
+- **Specific queries retrieve accurately** — top-3 chunks consistently contain the right context, Claude answers correctly with chunk citations
+- **Broad queries across the full dataset remain a limitation** — questions requiring aggregation across many chunks (e.g. "which characters are from X school") exceed the top-3 retrieval window; query decomposition planned for Day 5
 
 ## RAG Findings (Day 3)
 - **Retrieval works correctly when data covers the topic** — Query returned the right chunks and Claude answered accurately with appropriate uncertainty flagging
