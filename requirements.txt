@@ -1,0 +1,5 @@
+voyageai
+chromadb
+anthropic
+python-dotenv
+numpy
