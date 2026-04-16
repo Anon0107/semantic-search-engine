@@ -1,6 +1,8 @@
 .env
 __pycache__/
 *.pyc
+*.pyo
+.pytest_cache
 chroma_db/
 .chroma/
 notes.txt
