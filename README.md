@@ -36,7 +36,7 @@ Building semantic search from scratch — embeddings, vector databases, and RAG 
 
 ## Setup
 ```bash
-py -3.11 -m pip install voyageai chromadb anthropic python-dotenv numpy
+py -3.11 -m pip install -r requirements.txt
 ```
 
 Copy `.env.example` to `.env` and fill in your keys.
